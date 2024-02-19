@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    h1(style="color: #007BFF; font-size: 2.5rem;") #{title}
+    p(style="font-size: 1.2rem;") This is contacts collection
+    a.btn.btn-primary(href="/contacts/list", style="margin-top: 20px;") View Contacts

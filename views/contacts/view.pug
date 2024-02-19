@@ -1,0 +1,52 @@
+extends ../layout
+
+block content
+  .container
+    .contact-info
+      p
+        strong Contact ID:
+        span.text-info #{contact.id}
+      p
+        strong First Name:
+        span.text-success #{contact.fName}
+      p
+        strong Last Name:
+        span.text-danger #{contact.lName}
+      p
+        strong Email:
+        span.text-warning #{contact.email}
+      p
+        strong Notes:
+        span.text-muted #{contact.notes}
+      p
+        strong Created:
+        span.text-primary #{contact.modified}
+
+    .actions.d-flex.align-items-end.mt-3
+      a.btn.btn-primary(href='/contacts/list') Back
+      a.btn.btn-secondary.ms-2(href='/contacts/add') Edit
+      a.btn.btn-danger.ms-2 Delete
+
+//-extends ../layout
+
+ block content
+    div.container
+        div
+            p 
+                storng ID: #{contact.id}
+            p 
+                storng First Name: #{contact.fName}
+            p 
+                storng Last Name: #{contact.lName}
+            p 
+                storng Email: #{contact.email}
+            p 
+                storng Notes: #{contact.notes}
+            p 
+                storng Created: #{contact.modified}
+
+        div.d-flex.align-items-end
+            a.btn.btn-primary(href='/contacts/list') Back
+            a.btn.btn-secondary.ms-2(href='/contacts/add') Edit
+            a.btn.btn-danger.ms-2 Delete
+

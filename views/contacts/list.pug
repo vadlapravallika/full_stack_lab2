@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+    div.container
+        div(class='d-flex justify-content-end')
+            a(class='btn btn-primary' href="/contacts/add") Add
+        table.table
+            thead
+                tr
+                    th Contact ID
+                    th First Name
+                    th Last Name
+                    th Email address
+                    th Notes
+                    th actions
+            tbody
+                if contacts && contacts.length
+                    each item in contacts
+                        tr
+                            td= item.id
+                            td= item.fName
+                            td= item.lName
+                            td= item.email
+                            td= item.notes
+                            td 
+                                
+                                button.btn.btn-danger.ms-1 view
+                else
+                    p No records found
+                    

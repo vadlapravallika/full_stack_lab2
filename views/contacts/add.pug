@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    div.container
+        h1 Create New Contact
+        form(action="/contacts" method="post")
+            label(for="fName") First Name 
+            input.form-control(type="text" name='fName' value=item.fName ? item.fName : '' ) 
+            label(for="lName") Last Name 
+            input.form-control(type="text" name='lName' value=item.lName ? item.lName : '') 
+            label(for="email") Email 
+            input.form-control(type="text" name='email' value=item.email ? item.email : '') 
+            label(for="notes") Notes 
+            textarea.form-control(name="notes", cols="30", rows="10" value=item.notes ) 
+            button.btn.btn-success(type='submit') Save
+        a.btn.btn-secondary.my-2.ms-2(href='/contacts') back

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "2",
+    "fName": "Jane",
+    "lName": "Doe",
+    "email": "jane.doe@example.com",
+    "notes": "Another sample contact",
+    "createdAt": "2024-02-18T08:47:49.487Z",
+    "updatedAt": "2024-02-18T19:35:06.467Z"
+  },
+  {
+    "id": "generated-id-1708051549870",
+    "fName": "Samhitha",
+    "lName": "Sampath",
+    "email": "samhithavinni@gmail.com",
+    "notes": "",
+    "createdAt": "2024-02-16T02:47:07.373Z",
+    "updatedAt": "2024-02-16T02:47:07.373Z"
+  },
+  {
+    "id": "generated-id-1708051767029",
+    "fName": "Kane",
+    "lName": "Dann",
+    "email": "kanedanny@gmail.com",
+    "notes": "",
+    "createdAt": "2024-02-16T04:18:14.876Z",
+    "updatedAt": "2024-02-16T04:18:14.877Z"
+  },
+  {
+    "id": "generated-id-1708249148380",
+    "fName": "Vinni",
+    "lName": "Moee",
+    "email": "vinnimoee@gmail.com",
+    "notes": "",
+    "createdAt": "2024-02-18T10:34:02.980Z",
+    "updatedAt": "2024-02-18T19:33:49.685Z"
+  },
+  {
+    "id": "generated-id-1708252629379",
+    "fName": "Hina",
+    "lName": "James",
+    "email": "",
+    "notes": "",
+    "createdAt": "2024-02-18T19:32:15.355Z",
+    "updatedAt": "2024-02-18T19:53:56.082Z"
+  },
+  {
+    "id": "generated-id-1708323676555",
+    "fName": "Pravili",
+    "lName": "P",
+    "email": "prav@gmail.com",
+    "notes": "jsjsn",
+    "createdAt": "2024-02-19T06:21:16.555Z",
+    "updatedAt": "2024-02-19T06:21:16.555Z"
+  }
+]
