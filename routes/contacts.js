@@ -10,7 +10,7 @@ function validateContactData(data) {
 
   // Check for non-empty, non-numeric first name and last name
   const isNonEmptyString = value => typeof value === 'string' && value.trim() !== '';
-  const containsOnlyLetters = value => /^[A-Za-z]+$/.test(value);
+  const containsOnlyLetters = value => /^[A-Za-z ]+$/.test(value);
 
   const isNonNumericFirstName = isNonEmptyString(fName) && containsOnlyLetters(fName);
   const isNonNumericLastName = isNonEmptyString(lName) && containsOnlyLetters(lName);
@@ -46,10 +46,29 @@ router.get('/add', (req, res) => {
   res.render('contacts/add');
 });
 router.get('/edit', (req, res) => {
-  res.render('contacts/add');
+  const contact = {}
+  res.render('contacts/add', { contact, layout: 'add' });
 });
 router.get('/view', (req, res) => {
   res.render('contacts/view');
+});
+
+router.get('/:id/edit', (req, res) => {
+  try {
+    const { id } = req.params;
+    const contact = contactsJSON.getContactById(id);
+
+    if (!contact) {
+      // Handle the case where the contact is not found
+      res.status(404).send('Contact not found');
+      return;
+    }
+
+    res.render('contacts/edit', { contact, layout: 'edit' });
+  } catch (error) {
+    console.error('Error retrieving contact for editing:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 // Route to handle creating a new contact
@@ -88,7 +107,6 @@ router.get('/:id', (req, res) => {
   try {
     const { id } = req.params;
     const contact = contactsJSON.getContactById(id);
-
     if (!contact) {
       // Handle the case where the contact is not found
       res.status(404).send('Contact not found');
@@ -100,7 +118,8 @@ router.get('/:id', (req, res) => {
       createdAt: new Date(contact.createdAt).toLocaleString(),
       updatedAt: new Date(contact.updatedAt).toLocaleString(),
     };
-    res.render('contacts/show', { contact: formattedContact, layout: 'layout' });
+    console.log(formattedContact)
+    res.render('contacts/view', { contact: formattedContact, layout: 'layout' });
     } catch (error) {
       console.error('Error retrieving contact:', error);
       res.status(500).send('Internal Server Error');
@@ -116,12 +135,12 @@ router.post('/:id/delete', (req, res) => {
     const success = contactsJSON.deleteContact(id);
 
     if (!success) {
+      console.log('Im in')
       // Handle the case where the contact deletion fails
       res.status(500).send('Failed to delete contact');
       return;
     }
-
-    res.redirect('/contacts');
+    res.redirect('/contacts/list');
   } catch (error) {
     console.error('Error deleting contact:', error);
     res.status(500).send('Internal Server Error');
@@ -150,4 +169,45 @@ router.get('/generated/:id', (req, res) => {
   }
 });
 
+// updating an existing contact
+router.post('/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const { firstName, lastName, emailAddress, notes } = req.body;
+    // Validation
+    if (!validateContactData(req.body)) {
+      console.log(req.body, 'jj')
+      const contact = contactsJSON.getContactById(id);
+      return res.render(`contacts/edit`, { errorMessage: 'Please fill in all required fields.', contact, layout: 'layout' });
+    }
+    const sanitizedData = sanitizeContactData(req.body);
+    
+    const existingContact = contactsJSON.getContactById(id);
+    
+    if (!existingContact) {
+      // Handle the case where the contact is not found
+      res.status(404).send('Contact not found');
+      return;
+    }
+    
+    // Update the existing contact
+    existingContact.fName = sanitizedData.fName;
+    existingContact.lName = sanitizedData.lName;
+    existingContact.email = sanitizedData.email;
+    existingContact.notes = sanitizedData.notes;
+    
+    // Attempt to update the contact
+    const success = contactsJSON.updateContact(existingContact);
+    
+    if (!success) {
+      // Handle the case where the contact update fails
+      return res.status(500).send('Failed to update contact');
+    }
+
+    res.redirect(`/contacts/list`);
+  } catch (error) {
+    console.error('Error updating contact:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 module.exports = router;

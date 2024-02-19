@@ -20,12 +20,16 @@ block content
         span.text-muted #{contact.notes}
       p
         strong Created:
-        span.text-primary #{contact.modified}
+        span.text-primary #{contact.createdAt}
+      p
+        strong Updated:
+        span.text-primary #{contact.updatedAt}
 
     .actions.d-flex.align-items-end.mt-3
       a.btn.btn-primary(href='/contacts/list') Back
-      a.btn.btn-secondary.ms-2(href='/contacts/add') Edit
-      a.btn.btn-danger.ms-2 Delete
+      a.btn.btn-secondary(href=`/contacts/${contact.id}/edit`) Edit
+      form(style='display:inline-block', method='post', action=`/contacts/${contact.id}/delete`)
+          button.btn.btn-danger.ms-1(type="submit") Delete
 
 //-extends ../layout
 

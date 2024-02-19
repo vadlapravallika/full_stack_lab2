@@ -4,7 +4,7 @@ block content
     div.container
         div(class='d-flex justify-content-end')
             a(class='btn btn-primary' href="/contacts/add") Add
-        table.table
+        table.table.table-dark.table-striped
             thead
                 tr
                     th Contact ID
@@ -24,7 +24,7 @@ block content
                             td= item.notes
                             td 
                                 
-                                button.btn.btn-danger.ms-1 view
+                               a.button.btn.btn-danger.ms-1(href=`/contacts/${item.id}`)  view
                 else
                     p No records found
                     

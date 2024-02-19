@@ -1,56 +1,38 @@
 [
   {
-    "id": "2",
-    "fName": "Jane",
-    "lName": "Doe",
-    "email": "jane.doe@example.com",
-    "notes": "Another sample contact",
+    "id": "1",
+    "fName": "Danny",
+    "lName": "l",
+    "email": "Dannyl1@gmail.com",
+    "notes": "sample contact",
     "createdAt": "2024-02-18T08:47:49.487Z",
-    "updatedAt": "2024-02-18T19:35:06.467Z"
+    "updatedAt": "2024-02-19T23:02:55.651Z"
   },
   {
-    "id": "generated-id-1708051549870",
-    "fName": "Samhitha",
-    "lName": "Sampath",
-    "email": "samhithavinni@gmail.com",
-    "notes": "",
-    "createdAt": "2024-02-16T02:47:07.373Z",
-    "updatedAt": "2024-02-16T02:47:07.373Z"
+    "id": "2",
+    "fName": "supri",
+    "lName": "v",
+    "email": "supv@gmail.com",
+    "notes": "Another Sample Contact",
+    "createdAt": "2024-02-19T20:49:35.694Z",
+    "updatedAt": "2024-02-19T20:49:35.694Z"
   },
   {
-    "id": "generated-id-1708051767029",
-    "fName": "Kane",
-    "lName": "Dann",
-    "email": "kanedanny@gmail.com",
-    "notes": "",
-    "createdAt": "2024-02-16T04:18:14.876Z",
-    "updatedAt": "2024-02-16T04:18:14.877Z"
-  },
-  {
-    "id": "generated-id-1708249148380",
-    "fName": "Vinni",
-    "lName": "Moee",
-    "email": "vinnimoee@gmail.com",
-    "notes": "",
-    "createdAt": "2024-02-18T10:34:02.980Z",
-    "updatedAt": "2024-02-18T19:33:49.685Z"
-  },
-  {
-    "id": "generated-id-1708252629379",
-    "fName": "Hina",
-    "lName": "James",
-    "email": "",
-    "notes": "",
-    "createdAt": "2024-02-18T19:32:15.355Z",
-    "updatedAt": "2024-02-18T19:53:56.082Z"
-  },
-  {
-    "id": "generated-id-1708323676555",
-    "fName": "Pravili",
+    "id": "3",
+    "fName": "Valli",
     "lName": "P",
-    "email": "prav@gmail.com",
-    "notes": "jsjsn",
-    "createdAt": "2024-02-19T06:21:16.555Z",
-    "updatedAt": "2024-02-19T06:21:16.555Z"
+    "email": "vallip@gmail.com",
+    "notes": "",
+    "createdAt": "2024-02-19T21:12:19.341Z",
+    "updatedAt": "2024-02-19T22:53:23.922Z"
+  },
+  {
+    "id": "4",
+    "fName": "sam",
+    "lName": "d",
+    "email": "samd@gmail.com",
+    "notes": "sample contact",
+    "createdAt": "2024-02-19T21:26:24.359Z",
+    "updatedAt": "2024-02-19T21:26:24.359Z"
   }
 ]

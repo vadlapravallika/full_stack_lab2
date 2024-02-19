@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    div.container
+        h1 Update Contact
+        form(action=`/contacts/${contact.id}` method="post")
+            label(for="fName") First Name 
+            input.form-control(type="text" name='fName' value=contact.fName ? contact.fName : '' ) 
+            label(for="lName") Last Name 
+            input.form-control(type="text" name='lName' value=contact.lName ? contact.lName : '') 
+            label(for="email") Email 
+            input.form-control(type="text" name='email' value=contact.email ? contact.email : '') 
+            label(for="notes") Notes 
+            textarea.form-control(name="notes", cols="30", rows="10" ) #{contact.notes}
+            button.btn.btn-success(type='submit') Save
+        a.btn.btn-secondary.my-2.ms-2(href='/contacts/list') back
